@@ -1,13 +1,10 @@
 const github = require("octonode");
 const client = github.client("2291a24753cb1edaefff12f57b8e27242f4e36c8");
+const ghrepo = client.repo("kobkrit/TDSC_HTML_CSS");
 
-const ghme = client.me();
-
-ghme.repo(
+ghrepo.update(
   {
-    name: "TDSC_HTML_CSS"
+    private: true
   },
-  () => {
-    console.log("Success");
-  }
+  () => console.log("Success")
 );
